@@ -19,4 +19,12 @@ class Todo extends Model
     protected $casts = [
         'is_completed' => 'boolean',
     ];
+
+    // バリデーションルール
+    public static function rules($id = null)
+    {
+        return [
+            'title' => 'required|string|max:190', // 0 < x <= 191
+        ];
+    }
 }
